@@ -1,0 +1,49 @@
+<html>
+    <title>Answer</title>
+    <body>
+        <form action="answer.php" method="post">
+            Answer:
+            <input type="text" name="answer">
+            <input type="submit" value="Submit">
+
+        </form>
+    </body>
+</html>
+<?php
+    $conn = new mysqli("localhost","root","","Questions");
+    session_start();
+    
+    if($conn->connect_error){
+        die("Connection Failed: ".$conn->connect_error);
+    }
+?>
+<html>
+    <title>Answer</title>
+    <body>
+        <form action="answer.php" method="post">
+            Answer:
+            <input type="text" name="answer">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+<?php
+	if(isset($_POST['Submit']))
+	{
+		$sql = "INSERT into a(id,answer,flag,upvote)values('".$_SESSION["id_of_q"]."','".$_POST["answer"]."',0,0)";
+    $res = $conn->query($sql);
+    if($res){
+        echo "Your answer has been recorded";
+    }
+    else{
+        echo $_SESSION["id_of_q"];
+        echo "Counldn't submit answer";
+    }
+
+    session_destroy();
+    $conn->close();
+	}
+   
+    
+
+?>
