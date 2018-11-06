@@ -1,4 +1,5 @@
 # QNA
+
 A QNA system for college students. 
 
 ## Screenshots
@@ -16,7 +17,8 @@ A QNA system for college students.
 
 
 ## Features
-* Anonymity for posting Questions
+* Anonymity for students to post questions.
+* Full visibility of author to teacher.
 
 
  
