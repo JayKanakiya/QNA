@@ -1,6 +1,6 @@
 <?php
-define('DBUSER','root');
-define('DBPWD','jaymk');
+define('DBUSER','');
+define('DBPWD','');
 define('DBHOST','localhost');
 define('DBNAME','QNA');
 
