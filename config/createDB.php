@@ -35,7 +35,7 @@ password varchar(50)
 )";
 
 $sql1 = "CREATE TABLE Question (
-qid int(200),
+qid int(200) AUTO_INCREMENT,
 question varchar(1000),
 upvote int(200),
 flag int(200),
@@ -43,7 +43,7 @@ roll_no int(20),
 )";
 
 $sql2 ="CREATE TABLE Answer (
-aid int(200),
+aid int(200) AUTO_INCREMENT,
 answer varchar(1500),
 upvote int(200),
 flag int(200),
@@ -51,10 +51,10 @@ qid int(200),
 roll varchar(20)
 )";
 
-$conn->query($sql);
-// $conn->query($sql1);
+// $conn->query($sql);
+$conn->query($sql1);
 // $conn->query($sql3);
-// $conn->query($sql2);
+$conn->query($sql2);
 echo "Tables Created";
 $conn->close();
 ?>

@@ -15,24 +15,6 @@ session_start();
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <script src="../js/typeahead.bundle.js"></script>
   <script type="text/javascript" src="../scripts.js"></script>
-  <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../styles/util.css">
-  <link rel="stylesheet" type="text/css" href="../styles/main.css">
   </head>
 
 <style>
@@ -70,13 +52,6 @@ a{
   margin-right: 20px;
   margin-top: 5px;
   font-size: 25px;
-  color: black;
-}
-.logout{
-  float: right;
-  margin-right: 20px;
-  margin-top: 5px;
-  font-size: 20px;
   color: black;
 }
 i{
@@ -131,16 +106,14 @@ input{
       <a class="nav-link" href="#" style="color: #000000"><strong>Home</strong></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="../views/about.html" style="color: #000000"><strong>About</strong></a>
+      <a class="nav-link" href="#" style="color: #000000"><strong>About</strong></a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="userquestions.php" style="color: #000000"><strong>Your Questions</strong></a>
-    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#" style="color: #000000">Link 3</a>
+    </li> -->
   </ul>
   <ul class="nav navbar-nav ml-auto">
-
-  <strong><span><p class="user-name"><?php  echo $name; ?></p></span></strong><a href="../pages/profile.php"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a><a style="margin-left: 20px;" class="logout" href="./logout.php"><strong>Logout</strong> </a>
-
+  <strong><span><p class="user-name"><?php  echo $name; ?></p></span></strong><a href="../pages/profile.php"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
 </ul>
 </nav>
 
@@ -159,7 +132,7 @@ input{
       <h1>Trending Questions</h1>
       <?php
       include '../config/db.php';
-      $sql = "SELECT qid,question,roll_no FROM Question where upvote>50";
+      $sql = "SELECT qid,question,roll_no FROM Question";
 
       $result = $conn->query($sql);
       if ($result->num_rows > 0) {
@@ -186,19 +159,7 @@ input{
 </div>
 
 <footer class="container-fluid text-center">
-  <div class="col-sm-6" style="  position:relative;
-  bottom:0;
-  margin-left: 24vw;  position: fixed;
-  z-index: 99;background-color: white">
-<div style="margin-bottom:5vh;">
-<form action="ask.php" method="post"><input type="text" class="form-control" placeholder="Type your Question" name="question"></form>
-</div>
-<div style="margin-bottom:25px;">
-      <button class="login100-form-btn" style="background-color: #067afc">
-              Ask
-</div>
-      </a>
-      </div>
+  <p></p>
 </footer>
 
   </body>

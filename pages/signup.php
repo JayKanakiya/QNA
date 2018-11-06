@@ -6,9 +6,9 @@
     $branch = $_POST['branch'];
     $email = $_POST['email'];
     $pass = $_POST['password'];
-    echo $year;
-    $sql = "insert into Student values($roll,$name,$year,$branch,$email,$pass)";
+    echo $pass;
+    $sql = "insert into Student values('$roll','$name','$year','$branch','$email','$pass')";
     $conn->query($sql);
-    // header('location: ../views/login.html');
+    header('location: ../views/login.html');
     // location('header: ../views/login.html')
 ?>

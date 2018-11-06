@@ -13,29 +13,53 @@
 <?php
 	session_start();
 	include '../config/db.php';
+
 	$roll =  $_SESSION['roll'];
+	if($roll[0]=='t'){
 
-	$sql1 = "SELECT * from Question where roll_no = '$roll' ";
-	$res = $conn->query($sql1);
-	$q_asked = $res->num_rows;
+		$sql1 = "SELECT * from Question where roll_no = '$roll' ";
+		$res = $conn->query($sql1);
+		$q_asked = $res->num_rows;
 
-	$sql2 = "SELECT * from Answer where roll = '$roll' ";
-	$res1 = $conn->query($sql2);
-	$q_ans = $res1->num_rows;
+		$sql2 = "SELECT * from Answer where roll = '$roll' ";
+		$res1 = $conn->query($sql2);
+		$q_ans = $res1->num_rows;
 
-	$sql3 = "SELECT * FROM Student where roll_no = '$roll' ";
-	$res2 = $conn->query($sql3);
-	if ($res2->num_rows > 0) {
+		$sql3 = "SELECT * FROM Teacher where roll_no = '$roll' ";
+		$res2 = $conn->query($sql3);
+		if ($res2->num_rows > 0) {
 
-			while($row = $res2->fetch_assoc()) {
-				$email = $row['email'];
-				$branch = $row['branch'];
-				$year = $row['year'];
+				while($row = $res2->fetch_assoc()) {
+					$email = $row['email'];
+					$branch = $row['branch'];
 
-			}
+
+				}
+		}
+		$year = "-";
 	}
+	else{
+		$sql1 = "SELECT * from Question where roll_no = '$roll' ";
+		$res = $conn->query($sql1);
+		$q_asked = $res->num_rows;
 
+		$sql2 = "SELECT * from Answer where roll = '$roll' ";
+		$res1 = $conn->query($sql2);
+		$q_ans = $res1->num_rows;
 
+		$sql3 = "SELECT * FROM Student where roll_no = '$roll' ";
+		$res2 = $conn->query($sql3);
+		if ($res2->num_rows > 0) {
+
+				while($row = $res2->fetch_assoc()) {
+					$email = $row['email'];
+					$branch = $row['branch'];
+					$year = $row['year'];
+
+				}
+		}
+
+}
 ?>
 <style>
 
