@@ -88,7 +88,7 @@
                   if($roll[0]=='t'){
                     $assign = $row['roll_no'];
                   }
-                  echo "<div class='card-body bg-primary' '>" . $row['question'] . " </div><span><form action='answer.php' method='post'><span><button class='btn' type='submit' value='$qid' name='ans' >View Question</button></span></form></span>";
+                  echo "<div class='card-body bg-primary' '>" . $row['question'] . " </div><span><form action='answer.php' method='post'><span><button class='btn' type='submit' value='$qid' name='ans' >View Answer</button></span></form></span>";
               }
           }
           ?>

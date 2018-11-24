@@ -11,6 +11,8 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <script src="../js/typeahead.bundle.js"></script>
@@ -33,6 +35,13 @@ session_start();
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="../styles/util.css">
   <link rel="stylesheet" type="text/css" href="../styles/main.css">
+
+
+<!-- jQuery -->
+<!-- BS JavaScript -->
+
+
+
   </head>
 
 <style>
@@ -86,9 +95,35 @@ i{
 input{
   margin-top: 50px;
 }
+
 </style>
 
   <body>
+    <script type="text/javascript">
+        $(function() {
+        $("#myModal").modal();
+        });
+    </script>
+
+    <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Welcome to QNA!</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          Search the question you want using search bar, if there isn't one, post a new question for others to answer.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>"; -->
+
+
+
     <?php
     include '../config/db.php';
     $roll =  $_SESSION['roll'];
@@ -153,7 +188,7 @@ input{
     </div>
     <div class="col-sm-6 text-left">
       <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Questions" id="search">
+          <input type="text" class="form-control" placeholder="Start Searching Your Favourite Topic" id="search">
           <div id="display" style="border: 1px solid black"></div>
       </div>
       <h1>Trending Questions</h1>
@@ -169,7 +204,7 @@ input{
               if($roll[0]=='t'){
                 $assign = $row['roll_no'];
               }
-              echo "<div class='card-body bg-primary' '>" . $row['question'] . " &nbsp&nbsp&nbsp&nbsp -by  $assign </div><span><form action='answer.php' method='post'><span><button class='btn' type='submit' value='$qid' name='ans' >View Question</button></span></form></span>";
+              echo "<div class='card-body bg-primary' '>" . $row['question'] . " &nbsp&nbsp&nbsp&nbsp -by  $assign </div><span><form action='answer.php' method='post'><span><button class='btn' type='submit' value='$qid' name='ans' >View Answers</button></span></form></span>";
           }
       }
       ?>
@@ -191,11 +226,11 @@ input{
   margin-left: 24vw;  position: fixed;
   z-index: 99;background-color: white">
 <div style="margin-bottom:5vh;">
-<form action="ask.php" method="post"><input type="text" class="form-control" placeholder="Type your Question" name="question"></form>
+<form action="ask.php" method="post"><input type="text" class="form-control" placeholder="Type your Question" name="question"><input type="submit" class="login100-form-btn" style="background-color: #067afc" value="Ask"></form>
 </div>
 <div style="margin-bottom:25px;">
-      <button class="login100-form-btn" style="background-color: #067afc">
-              Ask
+      <!-- <button class="login100-form-btn" style="background-color: #067afc">
+              Ask -->
 </div>
       </a>
       </div>

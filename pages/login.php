@@ -1,3 +1,4 @@
+
 <?php
     session_start();
     require '../config/db.php';
@@ -21,6 +22,9 @@
       header('location: ./welcome.php');
     }
     else{
-        echo "invalid userid and password";
+        header( "refresh:5;url=../views/login.html" );
+        echo '<h1 style="font-family:arial;text-align:center;margin-top: 50px;">Invalid Username or Password</h1>';
+        echo '<h4 style="font-family:arial;text-align:center">You will be redirected to Login page</h4>';
+        echo '<img style="display:block;margin-left: auto;margin-right:auto;width:15%;margin-top: 50px;" src="../assets/rolling.gif">';
     }
 ?>

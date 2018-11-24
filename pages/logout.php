@@ -1,6 +1,6 @@
 <?php
 session_destroy();
-header('location:../views/login.html');
+header('location:../views/landing.html');
 
 
 ?>
