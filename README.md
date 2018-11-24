@@ -1,11 +1,14 @@
 # QNA
+
 A QNA system for college students. 
 
 ## Screenshots
 
-![Alt text](/images/login.png?raw=true "Login")
-![Alt text](/images/dashboard.png?raw=true "Dashboard")
-![Alt text](/images/profile.png?raw=true "Profile")
+![Login](/images/login.png?raw=true "Login")
+
+![Dashboard](/images/dashboard.png?raw=true "Dashboard")
+
+![Profile](/images/profile.png?raw=true "Profile")
 
 
 
@@ -14,7 +17,8 @@ A QNA system for college students.
 
 
 ## Features
-* Anonymity for posting Questions
+* Anonymity for students to post questions.
+* Full visibility of author to teacher.
 
 
  
