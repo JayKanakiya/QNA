@@ -1,4 +1,5 @@
 # QNA
+Developed by Tapas Bhadra, Jay Kanakiya
 
 A QNA system for college students. 
 
